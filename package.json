@@ -1,0 +1,14 @@
+{
+  "name": "flutter_web_integration",
+  "description": "Flutter web build in iframe.",
+  "scripts": {
+    "build": "yarn build_flutter && yarn cp_build && yarn build_web",
+    "build_flutter": "cd flutter_src/ && flutter build web",
+    "cp_build": "cpx \"./flutter_src/build/web/**/*\" \"./dist/\" -C",
+    "build_web": "cpx \"./webapp/**/*\" \"./dist/\""
+  },
+  "dependencies": {
+    "cpx": "^1.5.0"
+  },
+  "license": "MIT"
+}
